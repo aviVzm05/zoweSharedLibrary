@@ -14,11 +14,11 @@ pipeline {
                         try {
                             sh 'zowe profiles delete zosmf Avinash'
                             // sh 'zowe profiles create zosmf Avinash --host $HOST --port $PORT --user $userid --password $password --reject-unauthorized false'
-                            zosmfProfile profileName: 'Avinash', userId: $userid, password: $password
+                            zosmfProfile profileName: 'Avinash', userId: userid, password: password
                         } catch (Exception e) {
                             log.info 'profile not present...creating now'
                             // sh 'zowe profiles create zosmf Avinash --host $HOST --port $PORT --user $userid --password $password --reject-unauthorized false'
-                            zosmfProfile profileName: 'Avinash', userId: $userid, password: $password
+                            zosmfProfile profileName: 'Avinash', userId: userid, password: password
                         }
                     }
                 }
